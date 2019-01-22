@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/tent.min.css" rel="stylesheet">
+        <link href="css/auto-complete.css" rel="stylesheet">
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="js/auto-complete.min.js"></script>
+        <!-- Load Esri Library -->
+        <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+        <script src="https://js.arcgis.com/4.10/"></script>
+        
+        <title>Test Popups from remote sources</title>
+        
+        <!-- Esri required style -->
+        <style>
+            html, body, #viewDiv {
+                padding: 0;
+                margin: 0;
+                height: 100%;
+                width: 100%;
+            }
+            .grid {
+                height: 100%;
+                padding: 20px 0 20px 0;
+            }
+        </style>
+        <script src="js/dataEntryApp.js"></script>
+    </head>
+    <body>
+        <div class="grid grid--justify-center">
+            <div class="grid__column--2">
+                <form id="submitBusiness">
+                    <div class="control">
+                        <label for="firstName" class="control__label">First Name</label>
+                        <input class="control__input" type="text" name="firstName">
+                    </div>
+                    <div class="control">
+                        <label for="lastName" class="control__label">Last Name</label>
+                        <input class="control__input" type="text" name="lastName">
+                    </div>
+                    <div class="control">
+                        <label for="businessName" class="control__label">Business Name</label>
+                        <input class="control__input" type="text" name="businessName">
+                    </div>
+                    <div class="control">
+                        <label for="busAddress" class="control__label">Business Address</label>
+                        <input class="control__input" type="text" name="busAddress" autocomplete="new-password">
+                    </div>
+                    <input type="hidden" name="xcoord">
+                    <input type="hidden" name="ycoord">
+                    <div class="control">
+                        <input class="control__button button button--filled button--primary" type="submit" value="Submit" id="submitForm">
+                    </div>
+                </form>
+            </div>
+            <div class="grid__column--8">
+                <div id="viewDiv"></div>
+            </div>
+        </div>
+    </body>
+</html>
